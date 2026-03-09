@@ -1,0 +1,32 @@
+Comment identifier une stratégie de montée permettant de minimiser 
+la consommation de carburant pour atteindre une altitude donnée ?
+
+
+Début montée : moment où l'altitude commence à augmenter après le décollage
+Fin montée (Top Of Climb) : moment où l'altitude devient stable
+
+
+Condition : 
+ALT > 50 ft
+|delta(ALT)| < 50 ft pendant plusieurs secondes
+
+
+
+
+-passer sous format numérique nos fichier (csv->h5)
+-rajouter dans les variables de travail l'altitude
+-faire attention au palier lors d'une montée (tous les vols ne comporte de palier)
+-créer un affichage des altitude sur plusieurs vols mettre en évidence les palier
+-partie 5 : affichage par catégorie
+
+
+Déroulement du projet :
+0) passer en format numérique les données
+1) affichage courbe altitude
+2) idée pour simplification : choisir un intervalle et prendre les vols ou il y a forcément une montée dans cette intervalle
+3) avoir une idée concrète d'identification de précense ou non de palier 
+4) créer 2 classes vol avac ou sans palier
+5) créer les variable d'analyse
+6) faire une analyse pour mettre en évidence différente classes vols (montée agressive, montée modérée, montée progressive)
+7) affichage/classification de la meilleur à la pire classe
+
