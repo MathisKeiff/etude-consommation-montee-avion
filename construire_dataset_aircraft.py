@@ -47,7 +47,6 @@ def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_csv = None):
         axis1 = record["axis1"][:]
         values = record["block0_values"][:] #équivalent à [:,:]
 
-
         colonne = []
         for variable_name in axis0:
             colonne.append(variable_name.decode("utf-8"))
@@ -66,6 +65,14 @@ def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_csv = None):
             continue
 
         df_cible = df[set_variable_a_garder].copy()
+
+        #conversion explicite en numérique
+        for col in df_cible.columns:
+            df_cible[col] = pd.to_numeric(df_cible[col], errors="coerce")
+
+        #optionnel : réduire la taille mémoire
+        df_cible = df_cible.astype("float32")
+
         #ajout d'une colonne pour savoir sur qu'elle vol nous sommes
         df_cible["record"] = record_name
 
@@ -76,19 +83,22 @@ def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_csv = None):
 
     print("Dataset créé :", dataset.shape)
     print("Records ignorés :", vol_ignore)
+    print(dataset.dtypes)
 
-    #création du fichier csv
+    #création du fichier
     if nom_csv is not None:
-        dataset.to_csv(nom_csv, index=False)
+        dataset.to_parquet(nom_csv, index=False)
+        # si tu veux compression :
+        # dataset.to_parquet(nom_csv, index=False, compression="snappy")
+    
+    Aircraft.close()
+    
 
 
 
 
 
 #Création des trois csv
-construire_dataset_aircraft("archive/Aircraft_01.h5",set_variable_a_garder,
-"dataset_aircraft1.csv")
-construire_dataset_aircraft("archive/Aircraft_02.h5",set_variable_a_garder,
-"dataset_aircraft2.csv")
-construire_dataset_aircraft("archive/Aircraft_03.h5",set_variable_a_garder,
-"dataset_aircraft3.csv")
+construire_dataset_aircraft("archive/Aircraft_01.h5", set_variable_a_garder, "dataset_aircraft1.parquet")
+construire_dataset_aircraft("archive/Aircraft_02.h5", set_variable_a_garder, "dataset_aircraft2.parquet")
+construire_dataset_aircraft("archive/Aircraft_03.h5", set_variable_a_garder, "dataset_aircraft3.parquet")
