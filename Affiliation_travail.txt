@@ -1,0 +1,6 @@
+la fonction constuire_dataset_aircraft.py bug elle fait bien l'affichage mais ne s'arrête pas 
++ retravailler la fonction pour que ce soit coder à notre sauce
+
+construction d'une règle permettant de définir la montée
+
+séparation des vols avec palier et des vols sans palier
