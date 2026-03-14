@@ -1,9 +1,12 @@
-1)compréhension des fonctions determination_monte et tracer_decollage_alt 
+1)tracer_decollage_alt, constuire_dataset_aircraft
 bien commenter le code/ bien comprendre
 
-2)création d'une fonction permettant de concatener les vols avec palier et les vols sans palier 
-(peut-être penser à bien reranger les vols pour qu'il soit ranger de 0 à x)
+2)modification du code pour les variables d'analyse être sur que tous marche bien
 
-3) création des variables d'analyse
+3) maj du README
 
-4) Suite du Projet
+3) finalisation de l'analyse
+
+4) maj README
+
+5) Création du Powerpoint
