@@ -1,6 +1,9 @@
-la fonction constuire_dataset_aircraft.py bug elle fait bien l'affichage mais ne s'arrête pas 
-+ retravailler la fonction pour que ce soit coder à notre sauce
+1)compréhension des fonctions determination_monte et tracer_decollage_alt 
+bien commenter le code/ bien comprendre
 
-construction d'une règle permettant de définir la montée
+2)création d'une fonction permettant de concatener les vols avec palier et les vols sans palier 
+(peut-être penser à bien reranger les vols pour qu'il soit ranger de 0 à x)
 
-séparation des vols avec palier et des vols sans palier
+3) création des variables d'analyse
+
+4) Suite du Projet
