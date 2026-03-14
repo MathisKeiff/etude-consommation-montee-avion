@@ -91,8 +91,4 @@ def tracer_decollage_alt(
     plt.title(f"Profils de décollage normalisés ({nb_traces} vols)")
     plt.grid(True)
     plt.show(block=True)
-<<<<<<< HEAD
     plt.close("all")
-=======
-    plt.close('all')
->>>>>>> d4cf62fcfbb0a8e7e52135b4f28604b5dfe9f177

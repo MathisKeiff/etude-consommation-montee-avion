@@ -16,7 +16,7 @@ set_variable_a_garder = [
 "T2_1 [deg C]","T2_2 [deg C]","T3_1 [deg C]","T3_2 [deg C]","T5_1 [deg C]","T5_2 [deg C]"
 ]
 
-def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_csv = None):
+def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_parquet = None):
     
     Aircraft = h5py.File(h5_path, "r")
     
@@ -86,10 +86,10 @@ def construire_dataset_aircraft(h5_path, set_variable_a_garder, nom_csv = None):
     print(dataset.dtypes)
 
     #création du fichier
-    if nom_csv is not None:
-        dataset.to_parquet(nom_csv, index=False)
+    if nom_parquet is not None:
+        dataset.to_parquet(nom_parquet, index=False)
         # si tu veux compression :
-        # dataset.to_parquet(nom_csv, index=False, compression="snappy")
+        # dataset.to_parquet(nom_parquet, index=False, compression="snappy")
     
     Aircraft.close()
     
