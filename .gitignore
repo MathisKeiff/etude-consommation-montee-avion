@@ -1,11 +1,12 @@
-# données lourdes
-archive.zip
-archive/
-
-# datasets générés
-*.csv
-*.parquet
-*.h5
-
-
 data/raw/*
+data/processed/*
+
+!data/raw/archive/.gitkeep
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+.vscode
